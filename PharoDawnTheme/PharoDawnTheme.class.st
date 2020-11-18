@@ -1,6 +1,6 @@
 Class {
 	#name : #PharoDawnTheme,
-	#superclass : #UITheme,
+	#superclass : #PharoDarkTheme,
 	#category : #PharoDawnTheme
 }
 
