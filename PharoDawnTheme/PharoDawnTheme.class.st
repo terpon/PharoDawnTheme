@@ -14,11 +14,6 @@ PharoDawnTheme class >> baseSelectionColor [
 	^ Color fromHexString: '49483E'
 ]
 
-{ #category : #accessing }
-PharoDawnTheme class >> baseTextColor [
-	^ Color white
-]
-
 { #category : #installing }
 PharoDawnTheme class >> installFullTheme [
 	"Installs full theme: 
@@ -39,12 +34,9 @@ PharoDawnTheme class >> lightSelectionColor [
 	^ Color fromHexString: '49483E'
 ]
 
-{ #category : #settings }
-PharoDawnTheme class >> newDefaultSettings [
-	self setPreferredPreferences.
-	^ super newDefaultSettings
-		menuSelectionTextColor: self baseTextColor darker
-
+{ #category : #accessing }
+PharoDawnTheme class >> menuSelectionTextColor [
+ 	^ Color white darker
 ]
 
 { #category : #accessing }
@@ -89,6 +81,18 @@ PharoDawnTheme >> menuItemSelectedFillStyleFor: aMenuItem [
 	"Answer the selected fill style to use for the given menu item."
 
 	^ SolidFillStyle color: self selectionColor
+]
+
+{ #category : #defaults }
+PharoDawnTheme >> menuItemSelectedTextColorFor: aMenuItem [
+	"Answer the color to use for selected menu item text."
+
+	^ self class menuSelectionTextColor
+]
+
+{ #category : #'fill-styles-menubar' }
+PharoDawnTheme >> menubarItemSelectionTextColorFor: aMenubarItem [
+	^ self class menuSelectionTextColor
 ]
 
 { #category : #'fill-styles-scrollbars' }
